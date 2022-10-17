@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body><img src="images/logo.svg" alt="">
+  <main class="main__content">
+    <div class="main__content_left">
+      <form class="left__form" id="form1">
+        <div class="main__content_form_bill">
+          <label class="label_bill">Bill</label>
+          <input type="number" maxlength="7" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="bill_valor" class="input_bill" placeholder="0" >
+        </div>
+        <div class="main__content_form_tip">
+          <label class="label_tip">Select Tip %</label>
+          <div class="value_btn" id="btns__tip">          
+            <input type="button" class="tip_btns" value="5">
+            <input type="button" class="tip_btns" value="10">
+            <input type="button" class="tip_btns" value="15">
+            <input type="button" class="tip_btns" value="25">
+            <input type="button" class="tip_btns" value="50">
+            <input type="number" maxlength="2" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="tip_btns_2" id="tip_btns_custom" placeholder="Custom">
+          </div>
+        </div>
+        <div class="main__content_form_people">
+          <div class="form_people_content">
+            <label class="label_people">Number of People  </label>
+            <label class="label_people_error hidden">Can't be zero</label>
+          </div>
+          <input type="number" maxlength="7" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="input_people " id="people_valor" value="1">
+        </div>
+    </form>    
+    </div>
+    <div class="main__content_right">
+      <form class="main__content_right_values">
+        <div class="values_content">
+          <div class="value_tips">        
+            <label>
+              Tip Amount <br>
+              <span>/ person</span>
+            </label>
+            <div class="prices_align">
+              <span class="prices" >$</span>
+              <span class="prices" id="price_tip">0.00</span>
+            </div>
+          </div>
+          <div class="value_persons">
+            <label>
+              Total <br>
+              <span>/ person</span>
+            </label>
+            <div class="prices_align">
+              <span class="prices" >$</span>
+              <span class="prices" id="price_total_person">0.00</span>  
+            </div>
+          </div>
+        </div>
+        <button class="btn_reset" id="btn_reset">Reset</button>
+      </form>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Leonel Vilar</a>.
+  </div>
+  <script src="code.js"></script>
+</body>
+</html>
